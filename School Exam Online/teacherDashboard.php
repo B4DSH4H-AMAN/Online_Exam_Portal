@@ -14,7 +14,7 @@
         <div class="form-container sign-in-container">
             <form action="">
             <a href=""> <span></span> Student Details <span></span> <span></span> <span></span>  </a>
-            <a href=""> <span></span> Exam Details <span></span> <span></span> <span></span>  </a>
+            <a href="registerStudent.php"> <span></span> Register Student <span></span> <span></span> <span></span>  </a>
             <a href=""> <span></span> Add Exams <span></span> <span></span> <span></span>  </a>
             <a href="profile.php"> <span></span> Your Details <span></span> <span></span> <span></span>  </a>
             </form>
