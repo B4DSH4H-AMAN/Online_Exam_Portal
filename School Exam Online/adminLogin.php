@@ -30,13 +30,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     $_SESSION['Email'] = $row['Email'];
                     $_SESSION['Name'] = $row['Name'];
                     $_SESSION['Role'] = $role;
-                    
+
                     if($role == 'Student'){
-                        $_SESSION['Subject'] = $row['Subject'];
                         header("Location: studentDashboard.php");
                     }else if($role == 'Teacher'){
-                        $_SESSION['Subject'] = $row['Subject'];
-                        $_SESSION['Qualification'] = $row['Qualification'];
                         header("Location: teacherDashboard.php");
                     }else if($role == 'Admin'){
                         header("Location: adminDashboard.php");
@@ -54,28 +51,19 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/style.css">
-    <title>Welcome - Login to Start</title>
+    <title>Admin Login</title>
 </head>
 <body>
     <h2>Welcome to Online Exams Portal</h2>
     <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="" method="post" id="form">
-                <h1>Student Login</h1>
-                <span>Use your official credential</span>
-                <input type="hidden" name="role" value="Student">
-                <input type="email" name="email" placeholder="Enter Your Email" required>
-                <input type="password" name="password" placeholder="Enter Your Password" required>
-                <?php echo $signIn;  ?>
-            </form>
-        </div>
         <div class="form-container sign-in-container">
-            <form action="" method="post" id="form">
-                <h1>Teacher Login</h1>
+            <form action="" method="POST">
+                <h1>Admin Login</h1>
                 <span>Use your official credential</span>
-                <input type="hidden" name="role" value="Teacher">
+                <input type="hidden" name="role" value="Admin">
                 <input type="email" name="email" placeholder="Enter Your Email" required>
                 <input type="password" name="password" placeholder="Enter Your Password" required>
                 <?php echo $signIn;  ?>
@@ -83,28 +71,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         </div>
         <div class="overlay-container">
             <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Hello, Teacher!</h1>
-                    <p>Enter your official details and do Management</p>
-				    <button class="ghost" id="signIn">Click Here</button>
-                </div>
                 <div class="overlay-panel overlay-right">
-				    <h1>Hello, Admin!</h1>
-				    <p>Enter your official details to manage and <a href="adminLogin.php">Login here!</a></p>
-				    <button class="ghost" id="signUp">Student Here</button>
-			    </div>
+                    <h1>Hello Admin!</h1>
+                    <p>Hope you are having Good Day!</p>
+                </div>
             </div>
         </div>
     </div>
-    <?php     
-    if(isset($errorMessage)){
-        echo '<div class="alert success">
-               <span class="closebtn">&times;</span>  
-               <strong>ALERT !</strong> '.$errorMessage.'
-             </div>';
-    }
-    include_once 'common/footer.php';
-    include_once 'common/alert.php';
-    ?>
 </body>
 </html>

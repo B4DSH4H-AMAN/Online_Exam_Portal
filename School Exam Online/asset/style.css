@@ -248,7 +248,7 @@ form a {
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin-top: 30px;
     letter-spacing: 4px
 }
 a:hover {
@@ -333,7 +333,7 @@ a span:nth-child(4) {
 }
 .alert {
 	padding: 20px;
-	background-color: #2196F3;
+	background-color: #FF416C;
 	color: white;
 	opacity: 1;
 	transition: opacity 0.6s;

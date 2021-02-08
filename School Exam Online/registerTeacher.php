@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     // Fetching Values from HTML Form via POST method and filtering out SQL script using mysqli_real_escape_string function and passing parameter of Database connection
     $name = mysqli_real_escape_string($dbConnection, $_POST['name']);
     $subject = mysqli_real_escape_string($dbConnection, $_POST['subject']);
-    $class = mysqli_real_escape_string($dbConnection, $_POST['class']);
+    $qualification = mysqli_real_escape_string($dbConnection, $_POST['Qualification']);
     $email = mysqli_real_escape_string($dbConnection, $_POST['email']);
     $pass = mysqli_real_escape_string($dbConnection, $_POST['password']);
 
@@ -19,19 +19,18 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $pass = password_hash($pass, PASSWORD_DEFAULT);
 
     // Now We will check if the Email Entered already Exist in Database
-    $emailCheck = " SELECT*FROM `student` WHERE email = '$email' ";
+    $emailCheck = " SELECT*FROM `teacher` WHERE email = '$email' ";
     $emailFound = mysqli_query($dbConnection, $emailCheck);
     if($emailFound->num_rows == 1){
         $errorMessage = "This Email is already registered";
     }else{
         // Inserting the Details of Student if the Data does not Exist in Database
-        $insertQuery = " INSERT INTO `student`( `Name`, `Subject`, `Class`, `Email`, `Password`) 
-                         VALUES ('$name','$subject','$class','$email','$pass') ";
+        $insertQuery = " INSERT INTO `teacher`( `Name`, `Subject`, `Qualification`, `Email`, `Password`)  VALUES ('$name','$subject','$qualification','$email','$pass') ";
         $result = mysqli_query($dbConnection, $insertQuery);
         if($result == true){
-            $errorMessage = "Student Registration Succeed!";
+            $errorMessage = "Teacher Registration Succeed!";
         }else{
-            $errorMessage = "Student Registration Failed. Please Try Again!";
+            $errorMessage = "Teacher Registration Failed. Please Try Again!";
         }
     }
 }
@@ -44,27 +43,27 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/style.css">
-    <title>Student - Register Form</title>
+    <title>Teacher - Register Form</title>
 </head>
 <body>
-    <h2>Register Student Here - </h2> <a href="adminDashboard.php">Go Back!</a>
+    <h2>Register Teacher Here - </h2> <a href="adminDashboard.php">Go Back!</a>
     <div class="container">
         <div class="form-container sign-in-container">
             <form action="" method="post">
-                <h1>Student Details</h1>
-                <input type="text" name="name" id="" placeholder="Student Name" required>
-                <input type="text" name="subject" id="" value="English, Hindi, Science, Computer, Mathematic, EVS" >
-                <input type="text" name="class" id="" value="V-B" >
+                <h1>Teacher Details</h1>
+                <input type="text" name="name" id="" placeholder="Teacher Name" required>
+                <input type="text" name="subject" id="" placeholder="Subject" value="" >
+                <input type="text" name="Qualification" id="" placeholder="Qualification"value="" >
                 <input type="email" name="email" id="" placeholder="Email Address" required>
                 <input type="password" name="password" id="" placeholder="Password" required>
-                <?php echo $register; ?>
+                <?php echo $register;  ?>
             </form>
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-right">
-                    <h1>Welcome Student</h1>
-                    <p>We are glad you are a part of our School.</p>
+                    <h1>Welcome Teacher</h1>
+                    <p>We are glad you are a part of our School Staff.</p>
                 </div>
             </div>
         </div>
