@@ -13,10 +13,10 @@
     <div class="container" id="container">
         <div class="form-container sign-in-container">
             <form action="">
-                <a href=""> <span></span> Teacher Details <span></span> <span></span> <span></span>  </a>
+                <a href="detailTeacher.php"> <span></span> Teacher Details <span></span> <span></span> <span></span>  </a>
                 <a href="registerTeacher.php"> <span></span> Register Teacher <span></span> <span></span> <span></span>  </a>
-                <a href=""> <span></span> Student Details <span></span> <span></span> <span></span>  </a>
-                <a href=""> <span></span> Exams Details <span></span> <span></span> <span></span>  </a>
+                <a href="detailStudent.php"> <span></span> Student Details <span></span> <span></span> <span></span>  </a>
+                <a href="server/404.html"> <span></span> Exams Details <span></span> <span></span> <span></span>  </a>
                 <a href="registerAdmin.php"> <span></span> Register Admin <span></span> <span></span> <span></span>  </a>
             </form>
         </div>

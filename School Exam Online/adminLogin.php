@@ -15,7 +15,7 @@ if(isset($_SESSION['ID'])){
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
         // For all the Error Message which may occur
-        $errorMessage = "";
+        $errorMessage = $role = "";
         // Fetching Values from HTML Form via POST method and filtering out SQL script using mysqli_real_escape_string function and passing parameter of Database connection
         $email = mysqli_real_escape_string($dbConnection, $_POST['email']);
         $pass = mysqli_real_escape_string($dbConnection, $_POST['password']);
