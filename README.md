@@ -1,8 +1,10 @@
 # Online School Examination Portal
 
 ### Description
-    In this Project, We took challenge to make an Online Portal for Examination for Local, Small Educational Institutions. 
-    Via this Solution the Institution will be able to Manage there Faculties and Student as well as take Examinations of Students.
+    In this Project, We took challenge to make an Online Portal for Examination for Local, 
+    Small Educational Institutions. 
+    Via this Solution the Institution will be able to Manage 
+    there Faculties and Student as well as take Examinations of Students.
 
     There are three levels of Role with different level of Control over system:
     - Role Admin
