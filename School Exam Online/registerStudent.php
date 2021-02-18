@@ -1,8 +1,17 @@
 <?php 
 include_once 'common/glowbutton.php';  
-
-session_start();
 include_once 'database/dbConnection.php';
+include_once 'server/urlPatch.php';
+
+if($_SESSION['Role'] == 'Student'){
+    $dashBoard = 'studentDashboard.php';
+}else if($_SESSION['Role'] == 'Teacher'){
+    $dashBoard = 'teacherDashboard.php';
+    
+}else if($_SESSION['Role'] == 'Admin'){
+    $dashBoard = 'adminDashboard.php';
+
+}
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
     // For all the Error Message which may occur
@@ -47,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     <title>Student - Register Form</title>
 </head>
 <body>
-    <h2>Register Student Here - </h2> <a href="adminDashboard.php">Go Back!</a>
+    <h2>Register Student Here - </h2> <a href="<?php echo $dashBoard  ?>">Go Back!</a>
     <div class="container">
         <div class="form-container sign-in-container">
             <form action="" method="post">

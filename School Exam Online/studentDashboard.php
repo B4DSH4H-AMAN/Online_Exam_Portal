@@ -14,7 +14,7 @@
         <div class="form-container sign-in-container">
             <form action="">
             <a href=""> <span></span> Next Examination <span></span> <span></span> <span></span>  </a>
-            <a href=""> <span></span> Start Exams <span></span> <span></span> <span></span>  </a>
+            <a href="giveExam.php"> <span></span> Start Exams <span></span> <span></span> <span></span>  </a>
             <a href="profile.php"> <span></span> Your Details <span></span> <span></span> <span></span>  </a>
             <a href=""> <span></span> Exam Result <span></span> <span></span> <span></span>  </a>
             </form>
